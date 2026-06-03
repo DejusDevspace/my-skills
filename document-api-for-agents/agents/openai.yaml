@@ -1,0 +1,7 @@
+interface:
+  display_name: "Document API For Agents"
+  short_description: "Document live APIs for agent use"
+  default_prompt: "Use $document-api-for-agents to inspect this repo's live API surface and produce canonical OpenAPI plus README docs for agent integration."
+
+policy:
+  allow_implicit_invocation: true
