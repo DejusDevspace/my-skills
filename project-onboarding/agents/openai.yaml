@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Onboarding"
+  short_description: "Understand a repo before contributing"
+  default_prompt: "Use $project-onboarding to inspect this repository and summarize its conventions before making changes."
