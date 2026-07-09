@@ -1,6 +1,6 @@
 ---
 name: document-api-for-agents
-description: Use when a user wants to inspect a repository's live API surface and produce agent-facing documentation such as OpenAPI and a concise Markdown guide from routes, controllers, requests, resources, and middleware. Use this when documenting APIs for frontend or agent integration, and keep legacy collections like Bruno untouched unless explicitly requested.
+description: Use when a user wants to inspect a repository's live API surface and produce agent-facing documentation such as OpenAPI and a concise Markdown guide from routes, handlers/controllers, request schemas, response serializers, middleware, and configuration. Use this when documenting APIs for frontend or agent integration, and keep legacy collections like Bruno untouched unless explicitly requested.
 ---
 
 # Document API For Agents
@@ -12,13 +12,13 @@ Use this skill to turn a backend repo into canonical API docs for an AI agent or
 ## Workflow
 
 1. Inspect the live API surface first.
-   - Read route files, controllers, request validators, resources, middleware, config, and any existing docs that reflect current behavior.
+   - Read route declarations, handlers/controllers, request validators or schemas, response serializers or presenters, middleware, config, and any existing docs that reflect current behavior.
    - Prefer `rg` and direct file reads.
 2. Document only live behavior.
    - Include active routes, auth rules, permissions, filters, pagination, multipart uploads, webhooks, bulk operations, and error shapes that the code actually returns.
    - Exclude commented-out, deprecated, or inactive routes unless the user explicitly wants them.
 3. Treat code as the source of truth.
-   - Trust current controllers, requests, and resources over stale examples or old docs.
+   - Trust current handlers/controllers, request schemas, and response serializers over stale examples or old docs.
    - Resolve mismatches by matching implementation, not assumptions.
 4. Write the docs in two layers.
    - `openapi.yaml` is the canonical machine-readable contract.
@@ -60,4 +60,3 @@ Use a different path only if the repository already has a clear documentation co
   - What filters and payloads does each endpoint accept?
   - What shape does each endpoint return?
   - What permission gates or ownership rules apply?
-
